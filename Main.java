@@ -108,7 +108,11 @@ public class Main {
                 index.put(id, medicine);
             }
             save();
-            System.out.println("Stock saved.");
+            System.out.println(switch (choice) {
+                case 1 -> "Medicine added.";
+                case 2 -> "Medicine updated.";
+                default -> "Medicine deleted.";
+            });
         } else if (choice == 4) {
             search();
         } else if (choice == 5) {
