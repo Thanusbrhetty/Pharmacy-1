@@ -315,7 +315,7 @@ public class Main {
                     line.before().id(), line.before().name(), line.quantity(), line.before().price(), line.subtotal());
         }
         System.out.printf("Subtotal: %.2f%nDiscount (%s%%): %.2f%nTotal: %.2f%n",
-                bill.subtotal(), bill.discountRate(), bill.discount(), bill.total());
+                bill.subtotal(), bill.discountRate().stripTrailingZeros().toPlainString(), bill.discount(), bill.total());
     }
 
     private void show(Collection<?> records) {
