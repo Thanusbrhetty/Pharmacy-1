@@ -76,7 +76,10 @@ public class Main {
                 case 3 -> billing();
                 case 4 -> suppliers();
                 case 5 -> search();
-                case 0 -> { return; }
+                case 0 -> {
+                    System.out.println("Goodbye.");
+                    return;
+                }
             }
         }
     }
