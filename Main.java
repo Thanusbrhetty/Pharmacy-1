@@ -129,7 +129,7 @@ public class Main {
         System.out.println("\n=== MEDICINE SEARCH ENGINE ===");
         System.out.println("1 Search by ID (HashMap) | 2 Search by name (Linear) | 3 Search by ID (Binary) | 0 Back");
         List<Medicine> matches = new ArrayList<>();
-        switch (number("Search choice: ", 0, 3)) {
+        switch (number("Choose a search method: ", 0, 3)) {
             case 1 -> {
                 Medicine medicine = index.get(readId());
                 if (medicine != null) {
