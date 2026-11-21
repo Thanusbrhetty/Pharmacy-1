@@ -204,7 +204,11 @@ public class Main {
             else state.suppliers.set(state.suppliers.indexOf(old), supplier);
         }
         save();
-        System.out.println("Suppliers saved.");
+        System.out.println(switch (choice) {
+            case 1 -> "Supplier added.";
+            case 2 -> "Supplier updated.";
+            default -> "Supplier deleted.";
+        });
     }
 
     private void billing() throws IOException {
