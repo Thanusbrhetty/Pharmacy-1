@@ -258,7 +258,10 @@ public class Main {
         for (var item : request.items().entrySet()) {
             Medicine m = index.get(item.getKey());
             int quantity = item.getValue();
-            if (!sellable(m, quantity)) { System.out.println("Billing blocked for " + item.getKey()); return; }
+            if (!sellable(m, quantity)) {
+                System.out.println("Billing blocked for " + item.getKey() + ". The request is still queued.");
+                return;
+            }
             BigDecimal amount = m.price().multiply(BigDecimal.valueOf(quantity));
             lines.add(new Line(m, new Medicine(m.id(), m.name(), m.price(), m.stock() - quantity, m.expiry()), quantity, amount));
             subtotal = subtotal.add(amount);
