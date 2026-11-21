@@ -97,7 +97,7 @@ public class Main {
                 return;
             }
             if (choice == 1 && old != null) {
-                System.out.println("ID already exists.");
+                System.out.println("Medicine ID already exists.");
                 return;
             }
             if (choice == 3) {
