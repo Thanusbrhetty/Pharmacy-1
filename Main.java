@@ -7,7 +7,7 @@ import java.util.function.Function;
 
 public class Main {
     private static final Path DATA = Path.of("pharmacy.dat");
-    private static final Comparator<Medicine> EXPIRY = Comparator.comparing(Medicine::expiry);
+    private static final Comparator<Medicine> EXPIRY = Comparator.comparing(Medicine::expiry).thenComparing(Medicine::id);
     private record Medicine(String id, String name, BigDecimal price, int stock, LocalDate expiry)
             implements Serializable {}
     private record Supplier(String id, String name, String phone, String address) implements Serializable {}
