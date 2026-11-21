@@ -164,7 +164,10 @@ public class Main {
             default -> { return; }
         }
         System.out.printf("%nSearch results (%d found)%n", matches.size());
-        if (matches.isEmpty()) System.out.println("No matching medicines.");
+        if (matches.isEmpty()) {
+            System.out.println("No matching medicines.");
+            return;
+        }
         for (Medicine m : matches) {
             System.out.printf("%s | %s | Price: %.2f | Stock: %d | Expiry: %s%n",
                     m.id(), m.name(), m.price(), m.stock(), m.expiry());
