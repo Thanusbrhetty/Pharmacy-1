@@ -10,3 +10,10 @@ java Main.java
 ```
 
 Start the program from the same folder each time so it can restore the local `pharmacy.dat` file.
+
+## Try the search engine
+
+1. From the main menu select 1, then 1 to add a medicine.
+2. Enter ID M101, name Paracetamol, price 12.50, quantity 6, and expiry 2099-12-31.
+3. Select 5 from the main menu and choose 2 for a linear name search. Enter para to find Paracetamol.
+4. Try search option 1 for HashMap lookup or 3 for binary search, using M101. An unknown ID should return zero results.
