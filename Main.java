@@ -286,7 +286,10 @@ public class Main {
             System.out.println("Undo blocked because inventory changed.");
             return;
         }
-        if (!input("Void bill #" + bill.number() + " and restore stock? (yes/no): ").equalsIgnoreCase("yes")) return;
+        if (!input("Void bill #" + bill.number() + " and restore stock? (yes/no): ").equalsIgnoreCase("yes")) {
+            System.out.println("Undo cancelled.");
+            return;
+        }
         bill.lines().forEach(line -> replace(line.after(), line.before()));
         state.voided.add(state.sales.pop());
         save();
