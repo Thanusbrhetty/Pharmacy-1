@@ -311,7 +311,8 @@ public class Main {
     private void printBill(Bill bill, String status) {
         System.out.printf("Bill #%d | %s | %s | %s%n", bill.number(), status, bill.date(), bill.customer());
         for (Line line : bill.lines()) {
-            System.out.printf("%s: %d x %.2f = %.2f%n", line.before().name(), line.quantity(), line.before().price(), line.subtotal());
+            System.out.printf("%s - %s: %d x %.2f = %.2f%n",
+                    line.before().id(), line.before().name(), line.quantity(), line.before().price(), line.subtotal());
         }
         System.out.printf("Subtotal: %.2f%nDiscount (%s%%): %.2f%nTotal: %.2f%n",
                 bill.subtotal(), bill.discountRate(), bill.discount(), bill.total());
